@@ -45,7 +45,7 @@ import java.util.List;
 import static com.jiamny.Utils.ImageHelper.mat2DjlImage;
 import static com.jiamny.Utils.ImageHelper.ndarrayToMat;
 import static com.jiamny.Utils.ImageViewer.show;
-import static com.jiamny.Utils.Utils.printListObjects;
+import static com.jiamny.Utils.HelperFunctions.printListObjects;
 import static org.opencv.imgcodecs.Imgcodecs.imread;
 
 // Download model at: https://pan.baidu.com/s/1HYTfWazlk8W9pQDGVWAYbA?pwd=8mwt

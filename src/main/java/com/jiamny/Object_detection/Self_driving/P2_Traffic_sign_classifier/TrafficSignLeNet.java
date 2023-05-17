@@ -38,7 +38,7 @@ import java.util.*;
 
 import static ai.djl.training.EasyTrain.evaluateDataset;
 import static ai.djl.training.EasyTrain.trainBatch;
-import static com.jiamny.Utils.Utils.toDoubleArray;
+import static com.jiamny.Utils.HelperFunctions.toDoubleArray;
 
 import org.apache.commons.lang3.ArrayUtils;
 import tech.tablesaw.plotly.Plot;

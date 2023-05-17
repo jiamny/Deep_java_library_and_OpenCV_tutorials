@@ -36,7 +36,7 @@ import java.util.Random;
 
 import static com.jiamny.Utils.ImageHelper.ndarrayToMat;
 import static com.jiamny.Utils.ImageViewer.show;
-import static com.jiamny.Utils.Utils.printListObjects;
+import static com.jiamny.Utils.HelperFunctions.printListObjects;
 
 public class CARPKDetectionPrepareData {
     private static final Logger logger = LoggerFactory.getLogger(CARPKDetectionPrepareData.class);

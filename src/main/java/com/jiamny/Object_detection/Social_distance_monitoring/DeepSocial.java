@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.jiamny.Utils.Utils.combinationUtil;
-import static com.jiamny.Utils.Utils.printVectorElements;
+import static com.jiamny.Utils.HelperFunctions.combinationUtil;
+import static com.jiamny.Utils.HelperFunctions.printVectorElements;
 import static org.opencv.imgproc.Imgproc.line;
 
 public class DeepSocial {

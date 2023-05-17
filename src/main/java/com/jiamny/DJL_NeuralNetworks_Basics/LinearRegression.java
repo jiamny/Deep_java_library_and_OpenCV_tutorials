@@ -367,7 +367,7 @@ public class LinearRegression {
             model.save(modelDir,"lin-reg");
             System.out.println(model);
 
-        }catch(Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
 

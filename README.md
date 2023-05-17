@@ -48,3 +48,11 @@ contains examples of using deep java library and OpenCV to do object detection
 - [AI Accelerator Suite](https://github.com/mymagicpower/AIAS)
 
 - [Dive into Deep Learning](https://d2l.djl.ai/)
+
+- [Made With ML](https://github.com/GokuMohandas/Made-With-ML)
+
+- [Machine Learning Using Pytorch](https://github.com/Mayurji/MLWithPytorch)
+
+- [LearnOpenCV](https://github.com/spmallick/learnopencv)
+
+

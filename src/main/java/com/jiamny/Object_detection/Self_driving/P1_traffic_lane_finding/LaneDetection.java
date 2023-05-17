@@ -134,8 +134,8 @@ public class LaneDetection {
             }
             //double[] slopes = t_slopes.stream().mapToDouble(Double::doubleValue).toArray();
             //int[] bias = t_bias.stream().mapToInt(Integer::intValue).toArray();
-            int neg_bias = (int) Utils.median(t_bias);
-            double neg_slope = Utils.median(t_slopes);
+            int neg_bias = (int) HelperFunctions.median(t_bias);
+            double neg_slope = HelperFunctions.median(t_slopes);
 
             int x1 = 0, y1 = neg_bias;
             int x2 = -1 * (int) (Math.round(neg_bias / neg_slope));
@@ -154,8 +154,8 @@ public class LaneDetection {
                 t_slopes.add(line.slope);
             }
 
-            int lane_right_bias = (int) Utils.median(t_bias); //manager.create(r_bias).median().getInt(0);
-            double lane_right_slope = Utils.median(t_slopes); //.median().getInt(0);
+            int lane_right_bias = (int) HelperFunctions.median(t_bias); //manager.create(r_bias).median().getInt(0);
+            double lane_right_slope = HelperFunctions.median(t_slopes); //.median().getInt(0);
             int x1 = 0, y1 = lane_right_bias;
             int x2 = (int) (Math.round((img_shape[0] - lane_right_bias) / lane_right_slope));
             int y2 = (int) img_shape[0];

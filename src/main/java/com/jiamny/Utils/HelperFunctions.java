@@ -71,6 +71,11 @@ public class HelperFunctions {
         System.out.println();
     }
 
+    public static void printListObjects(List<Object> ax) {
+        ax.forEach(System.out::println);
+        System.out.println();
+    }
+
     public static ArrayList<Double> cumulativeSum(ArrayList<Double> numbers) {
         // variable
         double sum = 0.0;

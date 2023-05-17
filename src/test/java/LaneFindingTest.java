@@ -6,7 +6,6 @@ import com.jiamny.Object_detection.Self_driving.P1_traffic_lane_finding.LaneDete
 import com.jiamny.Object_detection.Self_driving.P1_traffic_lane_finding.Line;
 import com.jiamny.Utils.ImageViewer;
 import com.jiamny.Utils.MaskMats;
-import com.jiamny.Utils.Utils;
 import org.testng.annotations.Test;
 import org.opencv.core.*;
 
