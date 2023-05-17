@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.jiamny.Utils.Utils.combinationUtil;
-import static com.jiamny.Utils.Utils.printVectorElements;
+import static com.jiamny.Utils.HelperFunctions.combinationUtil;
+import static com.jiamny.Utils.HelperFunctions.printVectorElements;
 
 public class CombinationTest {
 
