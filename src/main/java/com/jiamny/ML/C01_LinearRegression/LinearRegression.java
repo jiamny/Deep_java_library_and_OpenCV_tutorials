@@ -1,4 +1,4 @@
-package com.jiamny.ML.LinearRegression;
+package com.jiamny.ML.C01_LinearRegression;
 
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;

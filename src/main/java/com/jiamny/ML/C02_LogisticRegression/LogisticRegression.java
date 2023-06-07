@@ -1,4 +1,4 @@
-package com.jiamny.ML.LogisticRegression;
+package com.jiamny.ML.C02_LogisticRegression;
 
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;
@@ -143,7 +143,7 @@ public class LogisticRegression {
             for(int i = 0; i < (curLine.length - 1); i++) {
                 Xd[j][i] = Double.parseDouble(curLine[i]);
             }
-            if( curLine[ncol - 1].equalsIgnoreCase("benign") )
+            if( curLine[ncol - 1].equalsIgnoreCase("malignant") )
                 Yd[j][0] = 0;
             else
                 Yd[j][0] = 1;
