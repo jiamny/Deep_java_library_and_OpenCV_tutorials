@@ -3,9 +3,11 @@ package com.jiamny.Utils;
 import ai.djl.Device;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;
+import ai.djl.ndarray.index.NDIndex;
 import ai.djl.ndarray.types.DataType;
 import ai.djl.ndarray.types.Shape;
 import ai.djl.training.dataset.ArrayDataset;
+import org.checkerframework.checker.units.qual.A;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,6 +46,32 @@ public class UtilFunctions {
             array[randomIndex] = temp;
         }
         return array;
+    }
+
+    public static int [] ShuffleArray(int [] array) {
+        Random rand = new Random();  // Random value generator
+        for (int i = 0; i < array.length; i++) {
+            int randomIndex = rand.nextInt(array.length);
+            int temp = array[i];
+            array[i] = array[randomIndex];
+            array[randomIndex] = temp;
+        }
+        return array;
+    }
+
+    public static ArrayList<NDArray> shuffle(NDArray X, NDArray y) {
+        NDManager manager = NDManager.newBaseManager();
+        int size = (int)X.getShape().get(0);
+        int [] idx = new int[size];
+        for(int i = 0; i < idx.length; i++)
+            idx[i] = i;
+
+        idx = ShuffleArray(idx);
+        NDArray sIdx = manager.create(idx);
+        ArrayList<NDArray> res = new ArrayList<>();
+        res.add(X.get(sIdx));
+        res.add(y.get(sIdx));
+        return res;
     }
 
     public static ArrayList<NDArray> loadIrisData(String fileName) {
