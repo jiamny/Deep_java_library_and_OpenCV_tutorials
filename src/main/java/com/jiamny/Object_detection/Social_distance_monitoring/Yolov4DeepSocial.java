@@ -21,7 +21,7 @@ import static org.opencv.imgproc.Imgproc.resize;
 public class Yolov4DeepSocial {
     static {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
@@ -271,12 +271,12 @@ public class Yolov4DeepSocial {
         try {
             List<String> classes = Files.readAllLines(Paths.get("./data/coco.names"));
 
-            Net net = Dnn.readNetFromDarknet("/media/stree/localssd/DL_data/cfgs/yolov4.cfg",
-                                             "/media/stree/localssd/DL_data/weights/yolo4/yolov4.weights");
+            Net net = Dnn.readNetFromDarknet("/media/hhj/localssd/DL_data/cfgs/yolov4.cfg",
+                                             "/media/hhj/localssd/DL_data/weights/yolo4/yolov4.weights");
 
             DetectionModel model = new DetectionModel(net);
 
-            VideoCapture cap = new VideoCapture("/media/stree/localssd/DL_data/videos/OxfordTownCentreDataset.mp4");
+            VideoCapture cap = new VideoCapture("/media/hhj/localssd/DL_data/videos/OxfordTownCentreDataset.mp4");
             int frame_width = (int)(cap.get(3));
             int frame_height = (int)(cap.get(4));
             width = (int)(frame_width/ReductionFactor);

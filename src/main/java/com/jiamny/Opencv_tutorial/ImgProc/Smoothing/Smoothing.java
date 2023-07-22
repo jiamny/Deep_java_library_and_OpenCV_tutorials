@@ -111,7 +111,7 @@ class SmoothingRun {
 public class Smoothing {
     public static void main(String[] args) {
         // Load the native library.
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         new SmoothingRun().run(args);
     }
 }

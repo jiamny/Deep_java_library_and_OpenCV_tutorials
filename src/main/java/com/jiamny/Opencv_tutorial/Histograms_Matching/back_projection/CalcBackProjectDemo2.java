@@ -163,7 +163,7 @@ public class CalcBackProjectDemo2 {
     public static void main(String[] args) {
         // Load the native OpenCV library
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         String[] ag = {"data/opencv/board.jpg"};
         // Schedule a job for the event dispatch thread:

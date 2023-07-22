@@ -41,7 +41,7 @@ public class DjlObjectDetection {
     static {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         // Make sure that you loaded your corresponding opencv java .dll file.
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
     }
 
     private static Mat image = null;

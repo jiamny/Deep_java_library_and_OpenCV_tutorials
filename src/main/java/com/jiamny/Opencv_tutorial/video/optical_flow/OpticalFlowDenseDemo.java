@@ -71,7 +71,7 @@ class OptFlowDense {
 
 public class OpticalFlowDenseDemo {
     public static void main(String[] args) {
-        System.load("/usr/local/share/java/opencv4/libopencv_java453.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         String[] ags = {"data/opencv/Megamind.avi"};
         new OptFlowDense().run(ags);
     }

@@ -13,7 +13,7 @@ public class BitwiseAndTest {
     @Test
     public void testBitwiseAnd() {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         String img_path = "./data/self_driving/images/solidWhiteCurve.jpg";
 

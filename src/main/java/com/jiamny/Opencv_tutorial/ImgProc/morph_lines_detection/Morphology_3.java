@@ -147,7 +147,7 @@ class Morphology_3Run {
 public class Morphology_3 {
     public static void main(String[] args) {
         // Load the native library.
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         String[] ags = {"data/opencv/apple.jpg"};
         new Morphology_3Run().run(ags);
     }

@@ -1,6 +1,6 @@
 # Deep_java_library_and_OpenCV_tutorials
 
-contains examples of using deep java library and OpenCV to do object detection
+Machine learning and deep learning examples with deep java library and OpenCV
 
 ## <u>Contents</u>
 
@@ -13,12 +13,13 @@ contains examples of using deep java library and OpenCV to do object detection
 * OpenCV Java Tutorials
 * AI Accelerator Suite
 * Dive into Deep Learning
+* Machine Learning Using Pytorch 
 
 ## <u>Prerequisites</u>
 
-- Java opencv 4.5.4/4.7.0 
+- Java opencv 4.5.4/4.7.0/4.8.0 
 
-- Deep Java library 0.22.0
+- Deep Java library 0.22.1
 
 - CUDA 11.7
 

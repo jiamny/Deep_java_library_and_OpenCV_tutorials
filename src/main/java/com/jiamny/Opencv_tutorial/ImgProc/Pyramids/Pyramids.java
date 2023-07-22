@@ -65,7 +65,7 @@ class PyramidsRun {
 public class Pyramids {
     public static void main(String[] args) {
         // Load the native library.
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         new PyramidsRun().run(args);
     }
 }

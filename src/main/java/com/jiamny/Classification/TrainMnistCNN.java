@@ -50,6 +50,7 @@ public final class TrainMnistCNN {
 
     public static void main(String[] args) throws IOException, TranslateException {
         TrainMnistCNN.runExample(args);
+        System.exit(0);
     }
 
     public static TrainingResult runExample(String[] args) throws IOException, TranslateException {

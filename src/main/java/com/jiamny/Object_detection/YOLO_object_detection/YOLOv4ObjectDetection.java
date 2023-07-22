@@ -21,7 +21,7 @@ public class YOLOv4ObjectDetection {
         // no opencv_java455 in java.library.path: [/usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni,
         // /lib/x86_64-linux-gnu, /usr/lib/x86_64-linux-gnu, /usr/lib/jni, /lib, /usr/lib]
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
@@ -30,8 +30,8 @@ public class YOLOv4ObjectDetection {
 
         List<String> classes = Files.readAllLines(Paths.get("data/coco.names"));
 
-        Net net = Dnn.readNetFromDarknet("/media/stree/localssd/DL_data/cfgs/yolov4.cfg",
-                "/media/stree/localssd/DL_data/weights/yolo4/yolov4.weights");
+        Net net = Dnn.readNetFromDarknet("/media/hhj/localssd/DL_data/cfgs/yolov4.cfg",
+                "/media/hhj/localssd/DL_data/weights/yolo4/yolov4.weights");
 
         DetectionModel model = new DetectionModel(net);
         model.setInputParams(1 / 255.0, new Size(416, 416), new Scalar(0), true);

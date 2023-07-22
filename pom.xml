@@ -10,7 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <djl.version>0.22.0</djl.version>
+    <djl.version>0.22.1</djl.version>
   </properties>
 
   <repositories>
@@ -83,9 +83,10 @@
     <dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-jni</artifactId>
-      <version>1.13.1-0.22.0</version>
+      <version>1.13.1-0.22.1</version>
       <scope>runtime</scope>
     </dependency>
+
     <!-- MXNet
     <dependency>
       <groupId>ai.djl.mxnet</groupId>
@@ -149,9 +150,10 @@
     <dependency>
       <groupId>org.opencv</groupId>
       <artifactId>opencv-java</artifactId>
-      <version>4.7.0</version>
+      <version>4.8.0</version>
       <scope>system</scope>
-      <systemPath>/usr/local/share/java/opencv4/opencv-470.jar</systemPath>
+      <systemPath>/usr/local/share/java/opencv4/opencv-480.jar</systemPath>
+      <!--systemPath>/usr/share/java/opencv4/opencv-454d.jar</systemPath -->
     </dependency>
     <dependency>
       <groupId>com.twelvemonkeys.imageio</groupId>
@@ -198,5 +200,10 @@
       <artifactId>json</artifactId>
       <version>20220320</version>
     </dependency>
+    <!--dependency>
+      <groupId>com.github.haifengl</groupId>
+      <artifactId>smile-base</artifactId>
+      <version>3.0.2</version>
+    </dependency-->
   </dependencies>
 </project>

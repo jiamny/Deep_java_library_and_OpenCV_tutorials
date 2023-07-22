@@ -18,7 +18,7 @@ public class Detector {
 	public static void main(String arg[]) {
 		//System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		//System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java460.dll");
-		System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+		System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
 		// Anl�kolarakyakalanankamerag�r�nt�lerinig�sterece�imiz frame ve panel
 		JFrame cameraFrame = new JFrame("Anl�k kamera g�r�nt�s�");
@@ -54,7 +54,7 @@ public class Detector {
 		Mat thresholded2 = new Mat();
 		// Kameradan g�r�nt� oku
 
-		String f = "/media/stree/localssd/DL_data/videos/mulballs.mp4";
+		String f = "/media/hhj/localssd/DL_data/videos/mulballs.mp4";
 		capture.open(f);
 
 		capture.read(webcam_image);

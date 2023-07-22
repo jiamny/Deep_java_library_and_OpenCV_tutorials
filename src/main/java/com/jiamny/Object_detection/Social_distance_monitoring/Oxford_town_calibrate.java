@@ -1,4 +1,4 @@
-package com.github.jiamny.Social_distance_monitoring;
+package com.jiamny.Object_detection.Social_distance_monitoring;
 
 import ai.djl.Device;
 import ai.djl.engine.Engine;

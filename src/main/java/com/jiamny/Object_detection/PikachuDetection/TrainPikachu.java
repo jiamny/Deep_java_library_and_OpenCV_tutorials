@@ -10,7 +10,7 @@
  * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.jiamny.Object_detection.CARPKDetection;
+package com.jiamny.Object_detection.PikachuDetection;
 
 import ai.djl.MalformedModelException;
 import ai.djl.Model;
@@ -77,7 +77,7 @@ import static com.jiamny.Utils.ImageViewer.show;
 public final class TrainPikachu {
     static {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
     }
     private TrainPikachu() {}
 

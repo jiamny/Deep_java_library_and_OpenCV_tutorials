@@ -119,7 +119,7 @@ class CornerHarris {
 public class CornerHarrisDemo {
     public static void main(String[] args) {
         // Load the native OpenCV library
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         // Schedule a job for the event dispatch thread:
         // creating and showing this application's GUI.

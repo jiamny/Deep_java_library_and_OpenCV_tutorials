@@ -43,7 +43,7 @@ public class YOLOv3ObjectDetection {
 
     static {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
@@ -62,8 +62,8 @@ public class YOLOv3ObjectDetection {
         output_layers = new ArrayList<>();
         size = new Size(image_size, image_size);
         // get yolov3-608.weights and yolov3-608.cfg form https://chowdera.com/2021/08/20210810105701286e.html#google_vignette
-        model_weights = "/media/stree/localssd/DL_data/weights/yolo3/yolov3_608.weights";
-        model_config = "/media/stree/localssd/DL_data/cfgs/yolov3_608.cfg";
+        model_weights = "/media/hhj/localssd/DL_data/weights/yolo3/yolov3_608.weights";
+        model_config = "/media/hhj/localssd/DL_data/cfgs/yolov3_608.cfg";
         class_file_name_dir = current_dir + "/data/coco.names";
         save = true;
         errors = false;

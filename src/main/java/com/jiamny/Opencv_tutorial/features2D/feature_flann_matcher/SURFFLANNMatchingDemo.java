@@ -68,7 +68,7 @@ public class SURFFLANNMatchingDemo {
     static {
         // Load the native OpenCV library
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
     }
 
     public static void main(String[] args) {

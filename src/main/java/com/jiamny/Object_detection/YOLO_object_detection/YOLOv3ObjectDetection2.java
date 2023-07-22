@@ -47,7 +47,7 @@ class PredictedBBox {
 public class YOLOv3ObjectDetection2 {
 
     static {
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
@@ -201,9 +201,9 @@ public class YOLOv3ObjectDetection2 {
         System.out.println("Engine: " + Engine.getInstance().getEngineName());
 
         System.out.println(current_dir);
-        String imgPath = "/media/stree/localssd/DL_data/videos/OxfordTownCentreDataset.mp4";
-        String cfgPath = "/media/stree/localssd/DL_data/cfgs/yolov3_608.cfg";
-        String wgtPath = "/media/stree/localssd/DL_data/weights/yolo3/yolov3_608.weights";
+        String imgPath = "/media/hhj/localssd/DL_data/videos/OxfordTownCentreDataset.mp4";
+        String cfgPath = "/media/hhj/localssd/DL_data/cfgs/yolov3_608.cfg";
+        String wgtPath = "/media/hhj/localssd/DL_data/weights/yolo3/yolov3_608.weights";
         String clsPath = "data/coco.names";
         YOLOv3ObjectDetection2 tgt2 = null;
 

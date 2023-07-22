@@ -14,7 +14,7 @@ public class ViedoPlayTest {
     @Test
     public void testVideoPlay() {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
 
         String f = "./data/self_driving/solidWhiteRight.mp4";

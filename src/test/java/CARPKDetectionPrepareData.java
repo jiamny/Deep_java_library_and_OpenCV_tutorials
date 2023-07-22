@@ -107,7 +107,7 @@ public class CARPKDetectionPrepareData {
     }
 
     public static void main(String[] args)  throws IOException {
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         // resizeImages();
 

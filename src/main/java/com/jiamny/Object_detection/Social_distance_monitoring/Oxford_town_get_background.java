@@ -14,7 +14,8 @@ public class Oxford_town_get_background {
         // load the OpenCV native library
         // System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         //System.load("/usr/local/share/java/opencv4/libopencv_java455.so");
-        System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
+        //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
     public static void main(String[] args) {

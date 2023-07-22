@@ -214,7 +214,7 @@ public class ImageSegmentationDemo {
     public static void main(String[] args) {
         // Load the native OpenCV library
         // System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         new ImageSegmentation().run(args);
     }

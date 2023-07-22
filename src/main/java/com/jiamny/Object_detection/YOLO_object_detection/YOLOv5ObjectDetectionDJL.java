@@ -34,7 +34,7 @@ import static org.opencv.imgproc.Imgproc.resize;
 public class YOLOv5ObjectDetectionDJL {
 
     static {
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         //System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java454.dll");
     }
 
@@ -83,7 +83,7 @@ public class YOLOv5ObjectDetectionDJL {
             criteria = Criteria.builder()
                     .setTypes(Image.class, DetectedObjects.class)
                     .optDevice(Device.cpu())
-                    .optModelPath(Paths.get("/media/stree/localssd/DL_data/weights/yolo5"))
+                    .optModelPath(Paths.get("/media/hhj/localssd/DL_data/weights/yolo5"))
                     //.optModelUrls(YOLOv5ObjectDetectionDJL.class.getResource("/yolov5s").getPath())
                     .optModelName("yolov5s.torchscript.pt")
                     .optTranslator(translator)
@@ -93,7 +93,7 @@ public class YOLOv5ObjectDetectionDJL {
             criteria = Criteria.builder()
                     .setTypes(Image.class, DetectedObjects.class)
                     .optDevice(Device.cpu())
-                    .optModelPath(Paths.get("/media/stree/localssd/DL_data/weights/yolo5"))
+                    .optModelPath(Paths.get("/media/hhj/localssd/DL_data/weights/yolo5"))
                     //.optModelUrls(YOLOv5ObjectDetectionDJL.class.getResource("/yolov5").getPath())
                     .optModelName("yolov5s.onnx")
                     .optTranslator(translator)
@@ -104,7 +104,7 @@ public class YOLOv5ObjectDetectionDJL {
         try(ZooModel<Image, DetectedObjects> model = ModelZoo.loadModel(criteria)) {
             // camera
             //VideoCapture cap = new VideoCapture(CAP_ANY);
-            VideoCapture cap = new VideoCapture("/media/stree/localssd/DL_data/videos/usa-street.mp4"); //car_chase_01.mp4");
+            VideoCapture cap = new VideoCapture("/media/hhj/localssd/DL_data/videos/usa-street.mp4"); //car_chase_01.mp4");
             if(!cap.isOpened()) {
                 System.err.println("Error opening video file");
                 cap.release();

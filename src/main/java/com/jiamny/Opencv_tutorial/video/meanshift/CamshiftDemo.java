@@ -72,7 +72,7 @@ class Camshift {
 
 public class CamshiftDemo {
     public static void main(String[] args) {
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
         String[] ags = {"data/opencv/Megamind.avi"};
         new Camshift().run(ags);
     }

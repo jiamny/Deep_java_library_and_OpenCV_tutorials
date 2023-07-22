@@ -168,7 +168,7 @@ class MatchTemplateDemoRun implements ChangeListener {
 public class MatchTemplateDemo {
     public static void main(String[] args) {
         // load the native OpenCV library
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         String[] ags = {"data/opencv/graf1.png", "data/opencv/graf3.png"};
         // run code

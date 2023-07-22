@@ -58,7 +58,7 @@ public class ReadPPMimageFileTest {
     @Test
     public void testReadPpmFile() {
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        System.load("/usr/local/share/java/opencv4/libopencv_java470.so");
+        System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
 
         try {
             System.out.println(Arrays.toString(ImageIO.getReaderFormatNames()));
