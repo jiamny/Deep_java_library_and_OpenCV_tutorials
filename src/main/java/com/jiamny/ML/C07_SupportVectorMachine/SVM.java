@@ -191,6 +191,7 @@ public class SVM {
         System.out.println(X.getShape().toString());
         System.out.println(y.getShape().toString());
         System.out.println("X " + X.get("0:3,..."));
+
         /******************************************************
          * MinMaxScaler normalize data
          ******************************************************/

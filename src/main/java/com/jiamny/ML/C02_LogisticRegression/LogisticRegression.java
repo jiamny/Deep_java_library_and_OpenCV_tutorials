@@ -155,6 +155,49 @@ public class LogisticRegression {
         return xy;
     }
 
+    public ArrayList<NDArray> load_breast_cancer(String fName) {
+        ArrayList<String> contents = new ArrayList<>();
+        int ncol = 0;
+        try {
+            File fr = new File(fName);
+            BufferedReader in = null;
+
+            in = new BufferedReader( new InputStreamReader(new FileInputStream(fr)));
+            String line = in.readLine();  // skip column name line
+            String[] curLine = line.strip().split(",");
+            ncol = curLine.length;
+            while( (line = in.readLine()) != null) {
+                //System.out.println(line);
+                contents.add(line.strip());
+            }
+            in.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        double [][] Xd = new double[contents.size()][ncol - 2];
+        int [][]  Yd  = new int[contents.size()][1];
+
+        for( int j = 0; j < contents.size(); j++ ) {
+            if (contents.get(j).length() < 1)
+                continue;
+            String[] curLine = contents.get(j).strip().split(",");
+            // skip
+            for(int i = 2; i < curLine.length; i++) {
+                Xd[j][i-2] = Double.parseDouble(curLine[i]);
+            }
+            if( curLine[1].equalsIgnoreCase("M") )
+                Yd[j][0] = 0;
+            else
+                Yd[j][0] = 1;
+        }
+        NDManager manager = NDManager.newBaseManager();
+        ArrayList<NDArray> xy = new ArrayList<>();
+        xy.add(manager.create(Xd).toType(DataType.FLOAT64, false));
+        xy.add(manager.create(Yd).toType(DataType.INT32, false));
+        return xy;
+    }
+
     public static void main(String[] args) {
         NDManager manager = NDManager.newBaseManager();
         NDArray nd = manager.create(new float[][]{{-5.0f, -4.5f}, {-4.0f, -3.5f}});

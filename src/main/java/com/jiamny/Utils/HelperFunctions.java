@@ -146,6 +146,14 @@ public class HelperFunctions {
         }
     }
 
+    public static int [] range(int start, int end) {
+        int size = (end - start);
+        int [] rg = new int[size];
+        for( int i = start; i < end; i++ )
+            rg[i-start] = i;
+        return rg;
+    }
+
     // ArrayList to Array Conversion
     public static int[] toIntArray(ArrayList<Integer> al) {
         return al.stream().mapToInt(i -> i).toArray();
