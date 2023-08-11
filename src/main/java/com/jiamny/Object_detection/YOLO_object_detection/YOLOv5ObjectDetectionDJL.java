@@ -3,6 +3,7 @@ package com.jiamny.Object_detection.YOLO_object_detection;
 import ai.djl.Device;
 import ai.djl.MalformedModelException;
 import ai.djl.ModelException;
+import ai.djl.engine.Engine;
 import ai.djl.inference.Predictor;
 import ai.djl.modality.cv.Image;
 import ai.djl.modality.cv.ImageFactory;
@@ -74,6 +75,14 @@ public class YOLOv5ObjectDetectionDJL {
     }
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         boolean useOnnx = false;
 
         Translator<Image, DetectedObjects> translator = YoloV5Translator.builder().optSynsetArtifactName("coco_classes.txt").build();

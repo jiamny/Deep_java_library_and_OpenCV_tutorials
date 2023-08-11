@@ -1,6 +1,7 @@
 package com.jiamny.Object_detection.FeatureExtraction;
 
 import ai.djl.ModelException;
+import ai.djl.engine.Engine;
 import ai.djl.inference.Predictor;
 import ai.djl.modality.cv.Image;
 import ai.djl.modality.cv.ImageFactory;
@@ -29,6 +30,13 @@ public final class FeatureComparisonExample {
     }
 
     public static void main(String[] args) throws IOException, ModelException, TranslateException {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
 
         Path imageFile1 = Paths.get("data/images/car1.png");
         Image img1 = ImageFactory.getInstance().fromFile(imageFile1);

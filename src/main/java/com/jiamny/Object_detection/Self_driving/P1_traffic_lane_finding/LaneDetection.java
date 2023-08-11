@@ -1,5 +1,6 @@
 package com.jiamny.Object_detection.Self_driving.P1_traffic_lane_finding;
 
+import ai.djl.engine.Engine;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;
 import ai.djl.ndarray.index.NDIndex;
@@ -312,6 +313,14 @@ public class LaneDetection {
     }
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         String current_dir = System.getProperty("user.dir");
         System.out.println(current_dir);
 
@@ -350,7 +359,7 @@ public class LaneDetection {
 
             // test on videos
             int resize_h = 540, resize_w = 960;
-            String f = "/media/stree/localssd/DL_data/videos/solidWhiteRight.mp4";
+            String f = "/media/hhj/localssd/DL_data/videos/solidWhiteRight.mp4";
             String of = "./output/solidWhiteRight.mp4";
             boolean useImshow = true;
             String tlt = "Traffic_lane_finding";

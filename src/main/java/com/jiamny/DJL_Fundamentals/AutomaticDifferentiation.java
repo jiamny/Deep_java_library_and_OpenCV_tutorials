@@ -23,6 +23,13 @@ public class AutomaticDifferentiation {
     }
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
 
         // simple example: differentiating the function y=2x⊤x with respect to the column vector x.
         NDManager manager = NDManager.newBaseManager();

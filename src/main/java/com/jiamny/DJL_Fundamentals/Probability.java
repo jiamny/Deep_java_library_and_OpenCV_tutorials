@@ -3,6 +3,7 @@ package com.jiamny.DJL_Fundamentals;
 //# Probability
 //## Basic Probability Theory
 
+import ai.djl.engine.Engine;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;
 import ai.djl.ndarray.index.NDIndex;
@@ -18,6 +19,13 @@ import tech.tablesaw.plotly.traces.ScatterTrace;
 public class Probability {
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
 
         NDManager manager = NDManager.newBaseManager();
 

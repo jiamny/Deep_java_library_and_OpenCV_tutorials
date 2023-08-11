@@ -49,6 +49,14 @@ public final class TrainMnistCNN {
     private TrainMnistCNN() {}
 
     public static void main(String[] args) throws IOException, TranslateException {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         TrainMnistCNN.runExample(args);
         System.exit(0);
     }

@@ -1,5 +1,6 @@
 package com.jiamny.Object_detection.Social_distance_monitoring;
 
+import ai.djl.engine.Engine;
 import org.opencv.core.Mat;
 import org.opencv.highgui.HighGui;
 import org.opencv.videoio.VideoCapture;
@@ -19,6 +20,14 @@ public class Oxford_town_get_background {
     }
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         String imgPath = "data/videos/OxfordTownCentreDataset.avi";
 
         String current_dir = System.getProperty("user.dir");

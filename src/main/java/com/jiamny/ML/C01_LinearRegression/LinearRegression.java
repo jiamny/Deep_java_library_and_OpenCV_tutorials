@@ -77,6 +77,10 @@ public class LinearRegression {
     }
 
     public static void main(String[] args) {
+        // set specific version of torch & CUDA
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+
         try (NDManager manager = NDManager.newBaseManager()) {
             NDArray X = manager.randomUniform(0.0f, 1.0f, new Shape(1, 500), DataType.FLOAT64);
             NDArray y = (X.mul(2).add(3)).add( manager.randomNormal(0.0f, 1.0f, new Shape(1, 500), DataType.FLOAT64).mul(0.1));

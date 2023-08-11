@@ -4,6 +4,7 @@ package com.jiamny.DJL_NeuralNetworks_Basics;
 
 import ai.djl.Device;
 import ai.djl.basicdataset.cv.classification.*;
+import ai.djl.engine.Engine;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDManager;
 import ai.djl.training.dataset.ArrayDataset;
@@ -75,6 +76,15 @@ public class ImageClassificationDataset {
     }
 
     public static void main(String[] args) {
+
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         try {
             //## Getting the Dataset
             int batchSize = 256;

@@ -3,6 +3,7 @@ package com.jiamny.Object_detection.DJL_object_detection;
 import ai.djl.Application;
 import ai.djl.Model;
 import ai.djl.ModelException;
+import ai.djl.engine.Engine;
 import ai.djl.inference.Predictor;
 import ai.djl.modality.cv.Image;
 import ai.djl.modality.cv.ImageFactory;
@@ -63,6 +64,7 @@ public final class CocoDetection {
   private CocoDetection() {}
 
   public static void main(String[] args) throws IOException, ModelException, TranslateException {
+
     String imagePath = "./data/images/ped_vec.jpeg";
     BufferedImage img = ImageIO.read(new File(imagePath));
     Image image = ImageFactory.getInstance().fromImage(img);

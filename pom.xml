@@ -10,7 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <djl.version>0.22.1</djl.version>
+    <djl.version>0.23.0</djl.version>
   </properties>
 
   <repositories>
@@ -31,6 +31,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  
   <dependencies>
     <dependency>
       <groupId>commons-cli</groupId>
@@ -73,17 +74,17 @@
       <version>${djl.version}</version>
       <scope>runtime</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cu117 -->
     <dependency>
-      <groupId>ai.djl.pytorch</groupId>
-      <artifactId>pytorch-native-cu117</artifactId>
-      <classifier>linux-x86_64</classifier>
-      <version>1.13.1</version>
+        <groupId>ai.djl.pytorch</groupId>
+        <artifactId>pytorch-native-cu117</artifactId>
+        <version>1.13.1</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-jni</artifactId>
-      <version>1.13.1-0.22.1</version>
+      <version>1.13.1-0.23.0</version>
       <scope>runtime</scope>
     </dependency>
 
@@ -95,17 +96,18 @@
     <dependency>
       <groupId>ai.djl.mxnet</groupId>
       <artifactId>mxnet-engine</artifactId>
-      <version>0.22.0</version>
+      <version>${djl.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>ai.djl.mxnet</groupId>
-      <artifactId>mxnet-native-mkl</artifactId>
-      <classifier>linux-x86_64</classifier>
-      <scope>runtime</scope>
-      <version>1.9.1</version>
+        <groupId>ai.djl.mxnet</groupId>
+        <artifactId>mxnet-native-cu112mkl</artifactId>
+        <classifier>linux-x86_64</classifier>
+        <version>1.9.1</version>
+        <scope>runtime</scope>
     </dependency>
     -->
+
     <!-- TensorFlow -->
     <dependency>
       <groupId>ai.djl.tensorflow</groupId>
@@ -140,6 +142,13 @@
       <groupId>ai.djl.paddlepaddle</groupId>
       <artifactId>paddlepaddle-engine</artifactId>
       <version>${djl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ai.djl.paddlepaddle</groupId>
+      <artifactId>paddlepaddle-native-cpu</artifactId>
+      <classifier>linux-x86_64</classifier>
+      <version>2.2.2</version>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>

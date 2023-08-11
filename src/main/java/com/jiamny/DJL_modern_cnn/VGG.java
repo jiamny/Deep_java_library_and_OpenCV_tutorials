@@ -92,6 +92,14 @@ public class VGG {
 
     public static void main(String[] args) throws IOException, TranslateException, ModelException {
 
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         VGG vgg = new VGG();
 
         // Since this network uses 8 convolutional layers and 3 fully-connected layers,

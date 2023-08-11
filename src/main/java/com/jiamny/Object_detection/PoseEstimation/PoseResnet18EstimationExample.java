@@ -1,6 +1,7 @@
 package com.jiamny.Object_detection.PoseEstimation;
 
 import ai.djl.ModelException;
+import ai.djl.engine.Engine;
 import ai.djl.modality.cv.Image;
 import ai.djl.modality.cv.ImageFactory;
 import ai.djl.modality.cv.output.DetectedObjects;
@@ -30,6 +31,7 @@ public final class PoseResnet18EstimationExample {
   private PoseResnet18EstimationExample() {}
 
   public static void main(String[] args) throws IOException, ModelException, TranslateException {
+
     Path imageFile = Paths.get("data/images/pose.jpeg");
     Image image = ImageFactory.getInstance().fromFile(imageFile);
     PersonDetection personDetection = new PersonDetection();

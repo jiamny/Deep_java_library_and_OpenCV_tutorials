@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import ai.djl.engine.Engine;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -19,6 +21,14 @@ public class Detector {
 		//System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		//System.load("C:\\Program Files\\Opencv4\\java\\x64\\opencv_java460.dll");
 		System.load("/usr/local/share/java/opencv4/libopencv_java480.so");
+
+		// ----------------------------------------------------------------------
+		// set specific version of torch & CUDA
+		// ----------------------------------------------------------------------
+		System.setProperty("PYTORCH_VERSION", "1.13.1");
+		System.setProperty("PYTORCH_FLAVOR", "cu117");
+		System.out.println(Engine.getDefaultEngineName());
+		System.out.println(Engine.getInstance().defaultDevice());
 
 		// Anl�kolarakyakalanankamerag�r�nt�lerinig�sterece�imiz frame ve panel
 		JFrame cameraFrame = new JFrame("Anl�k kamera g�r�nt�s�");

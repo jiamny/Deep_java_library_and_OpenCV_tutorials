@@ -154,6 +154,47 @@ public class HelperFunctions {
         return rg;
     }
 
+    public static HashMap<Integer, Double> sortByValue(HashMap<Integer, Double> hm, boolean des) {
+        // Create a list from elements of HashMap
+        List<Map.Entry<Integer, Double> > list =
+                new LinkedList<Map.Entry<Integer, Double> >(hm.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Double> >() {
+            public int compare(Map.Entry<Integer, Double> o1,
+                               Map.Entry<Integer, Double> o2) {
+                if( des )
+                    return (o2.getValue()).compareTo(o1.getValue());
+                else
+                    return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+
+        // put data from sorted list to hashmap
+        HashMap<Integer, Double> temp = new LinkedHashMap<Integer, Double>();
+        for (Map.Entry<Integer, Double> aa : list) {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        return temp;
+    }
+
+    public static int [] argSort(double [] d) {
+        HashMap<Integer, Double> hm = new HashMap<>();
+        for(int i = 0; i < d.length; i++) {
+            hm.put(i, d[i]);
+        }
+        hm = sortByValue(hm, true);
+        List<Map.Entry<Integer, Double> > list =
+                new LinkedList<Map.Entry<Integer, Double> >(hm.entrySet());
+        int [] idx = new int[d.length];
+        int i = 0;
+        for (Map.Entry<Integer, Double> aa : list) {
+            idx[i] = aa.getKey();
+            i++;
+        }
+        return idx;
+    }
+
     // ArrayList to Array Conversion
     public static int[] toIntArray(ArrayList<Integer> al) {
         return al.stream().mapToInt(i -> i).toArray();

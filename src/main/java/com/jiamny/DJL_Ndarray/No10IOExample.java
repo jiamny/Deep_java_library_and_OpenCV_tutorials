@@ -1,5 +1,6 @@
 package com.jiamny.DJL_Ndarray;
 
+import ai.djl.engine.Engine;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDList;
 import ai.djl.ndarray.NDManager;
@@ -22,6 +23,14 @@ public final class No10IOExample {
     }
 
     public static void main(String[] args) throws IOException {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         try (NDManager manager = NDManager.newBaseManager()) {
             // 1. 将数组保存到以 .npy 为扩展名的文件
             NDArray a = manager.create(new int[]{1, 2, 3, 4, 5});

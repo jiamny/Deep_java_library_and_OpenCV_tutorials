@@ -255,6 +255,14 @@ public class Yolov4DeepSocial {
 
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         // 确定Deep Java Library (DJL)中的可用GPU内存
         //MemoryUsage mem = CudaUtils.getGpuMemory(device);
         //mem.getMax();

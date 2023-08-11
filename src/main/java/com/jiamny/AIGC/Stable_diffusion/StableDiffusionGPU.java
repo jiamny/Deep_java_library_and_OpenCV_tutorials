@@ -48,7 +48,7 @@ import java.util.Map;
 /** The example is targeted to a specific use case of Stable Diffusion. */
 public class StableDiffusionGPU {
     private static final Logger logger = LoggerFactory.getLogger(StableDiffusionGPU.class);
-    private static final String sdArtifacts = "pytorch_gpu";
+    private static final String sdArtifacts = "models/sd/pytorch_gpu";
     private static final String prompt = "a photo of an astronaut riding a horse on mars";
     private static final String negative_prompt = "";
 
@@ -92,6 +92,14 @@ public class StableDiffusionGPU {
 
 
     public static void main(String[] args) throws IOException, TranslateException, ModelException {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
 
         NDList textEncoding = SDTextEncoder(SDTextTokenizer(prompt));
         NDList uncondEncoding = SDTextEncoder(SDTextTokenizer(negative_prompt));

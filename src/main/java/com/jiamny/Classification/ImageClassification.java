@@ -15,6 +15,7 @@ package com.jiamny.Classification;
 import ai.djl.Model;
 import ai.djl.ModelException;
 import ai.djl.basicmodelzoo.basic.Mlp;
+import ai.djl.engine.Engine;
 import ai.djl.inference.Predictor;
 import ai.djl.modality.Classifications;
 import ai.djl.modality.cv.Image;
@@ -48,6 +49,16 @@ public final class ImageClassification {
     private ImageClassification() {}
 
     public static void main(String[] args) throws IOException, ModelException, TranslateException {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
+
         Classifications classifications = ImageClassification.predict();
         System.out.println(classifications);
         logger.info("{}", classifications);

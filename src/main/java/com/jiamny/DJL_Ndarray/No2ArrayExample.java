@@ -1,5 +1,6 @@
 package com.jiamny.DJL_Ndarray;
 
+import ai.djl.engine.Engine;
 import ai.djl.ndarray.NDArray;
 import ai.djl.ndarray.NDArrays;
 import ai.djl.ndarray.NDList;
@@ -20,6 +21,14 @@ public final class No2ArrayExample {
     }
 
     public static void main(String[] args) {
+        // ----------------------------------------------------------------------
+        // set specific version of torch & CUDA
+        // ----------------------------------------------------------------------
+        System.setProperty("PYTORCH_VERSION", "1.13.1");
+        System.setProperty("PYTORCH_FLAVOR", "cu117");
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         try (NDManager manager = NDManager.newBaseManager()) {
             // 1. 数组的维数
             NDArray nd = manager.arange(24); // 现只有一个维度
