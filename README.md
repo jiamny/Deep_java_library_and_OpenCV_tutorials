@@ -23,7 +23,7 @@ Machine learning and deep learning examples with deep java library and OpenCV
 
 - CUDA 11.7
 
-- cuDNN 8.7
+- cuDNN 8.6
 
 - TwelveMonkeys imageio 3.8.2
 
