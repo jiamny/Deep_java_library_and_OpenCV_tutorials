@@ -8,6 +8,7 @@ import ai.djl.ndarray.types.Shape;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import static com.jiamny.Utils.UtilFunctions.loadIrisData;
 import static com.jiamny.Utils.UtilFunctions.train_test_split;
@@ -26,18 +27,18 @@ public class NaiveBayes {
      */
     public int total_samples;      // Number of Samples
     public int feature_count;      // Number of Features
-    public NDArray [] mu;    // mean
-    public NDArray [] sigma; // variance
+    public HashMap<Integer, NDArray> mu;    // mean
+    public HashMap<Integer, NDArray> sigma; // variance
     public double  e;               //epsilon
     public int n_classes;           // number of classes
-    public double[] prior_probability_X;
+    public HashMap<Integer, Double> prior_probability_X;
 
     public NaiveBayes(NDArray X, NDArray y) {
         total_samples = (int)X.getShape().getShape()[0];
         feature_count = (int)X.getShape().getShape()[1];
-        mu = new NDArray[feature_count];
-        sigma = new NDArray[feature_count];
-        prior_probability_X = new double[feature_count];
+        mu = new HashMap<>();
+        sigma = new HashMap<>();
+        prior_probability_X = new HashMap<>();
         e = 1e-4;
         n_classes = y.unique().size();
     }
@@ -71,10 +72,10 @@ public class NaiveBayes {
             NDArray mn = X_class.mean(idx);
             NDArray var = ((X_class.sub(mn).square()).sum(idx)).div(X_class.getShape().getShape()[0] - 1);
 
-            mu[cls] = mn;
-            sigma[cls] = var;
-
-            prior_probability_X[cls] = (1.0*X_class.getShape().getShape()[0] / X.getShape().getShape()[0]);
+            mu.put(cls, mn);
+            sigma.put(cls, var);
+            prior_probability_X.put(cls,
+                    (1.0*X_class.getShape().getShape()[0] / X.getShape().getShape()[0]));
             //mu[cls] = torch.mean(X_class, dim = 0)
             //sigma[cls] = torch.var(X_class, dim = 0)
             //self.prior_probability_X[cls] = X_class.shape[0] / X.shape[0]
@@ -118,10 +119,10 @@ public class NaiveBayes {
 
         NDArray probabilities = manager.zeros(new Shape(X.getShape().getShape()[0], n_classes));
         for(int cls = 0; cls < n_classes; cls++) {
-            NDArray class_probability = gaussian_naive_bayes(X, mu[cls], sigma[cls]);
+            NDArray class_probability = gaussian_naive_bayes(X, mu.get(cls), sigma.get(cls));
             //System.out.println("class_probability: \n" + class_probability);
             //probabilities[:,cls] = class_probability + torch.log(torch.scalar_tensor(self.prior_probability_X[cls]))
-            NDArray V = class_probability.add(manager.create(prior_probability_X[cls]).log());
+            NDArray V = class_probability.add(manager.create(prior_probability_X.get(cls)).log());
             probabilities.set(new NDIndex("...,"+cls), V);
         }
 

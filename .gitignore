@@ -21,6 +21,7 @@
 *.pdf
 *.hdr
 
+models
 target
 data/CARPK
 data/carpk
