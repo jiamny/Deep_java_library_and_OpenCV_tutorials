@@ -5,15 +5,8 @@ import ai.djl.ndarray.NDManager;
 import ai.djl.ndarray.types.DataType;
 import ai.djl.ndarray.types.Shape;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import static com.jiamny.Utils.UtilFunctions.shuffle;
-import static com.jiamny.Utils.UtilFunctions.train_test_split;
+import static com.jiamny.Utils.UtilFunctions.*;
 
 class SupportVectorMachine {
     int total_samples, features_count, n_classes;
@@ -139,54 +132,11 @@ class SupportVectorMachine {
 }
 public class SVM {
 
-    public ArrayList<NDArray> load_breast_cancer(String fName) {
-        ArrayList<String> contents = new ArrayList<>();
-        int ncol = 0;
-        try {
-            File fr = new File(fName);
-            BufferedReader in = null;
-
-            in = new BufferedReader( new InputStreamReader(new FileInputStream(fr)));
-            String line = in.readLine();  // skip column name line
-            String[] curLine = line.strip().split(",");
-            ncol = curLine.length;
-            while( (line = in.readLine()) != null) {
-                //System.out.println(line);
-                contents.add(line.strip());
-            }
-            in.close();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-
-        double [][] Xd = new double[contents.size()][ncol - 2];
-        int [][]  Yd  = new int[contents.size()][1];
-
-        for( int j = 0; j < contents.size(); j++ ) {
-            if (contents.get(j).length() < 1)
-                continue;
-            String[] curLine = contents.get(j).strip().split(",");
-            // skip
-            for(int i = 2; i < curLine.length; i++) {
-                Xd[j][i-2] = Double.parseDouble(curLine[i]);
-            }
-            if( curLine[1].equalsIgnoreCase("M") )
-                Yd[j][0] = 0;
-            else
-                Yd[j][0] = 1;
-        }
-        NDManager manager = NDManager.newBaseManager();
-        ArrayList<NDArray> xy = new ArrayList<>();
-        xy.add(manager.create(Xd).toType(DataType.FLOAT64, false));
-        xy.add(manager.create(Yd).toType(DataType.INT32, false));
-        return xy;
-    }
-
     public static void main(String[] args) {
         NDManager manager = NDManager.newBaseManager();
         SVM svm = new SVM();
         String fName = "./data/ML/breast_cancer.csv";
-        ArrayList<NDArray> xy  = svm.load_breast_cancer(fName);
+        ArrayList<NDArray> xy  = load_breast_cancer(fName);
         NDArray X = xy.get(0), y = xy.get(1);
         System.out.println(X.getShape().toString());
         System.out.println(y.getShape().toString());

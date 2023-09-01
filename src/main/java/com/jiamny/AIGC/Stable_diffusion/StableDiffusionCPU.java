@@ -92,6 +92,9 @@ public class StableDiffusionCPU {
 
     public static void main(String[] args) throws IOException, TranslateException, ModelException {
 
+        System.out.println(Engine.getDefaultEngineName());
+        System.out.println(Engine.getInstance().defaultDevice());
+
         NDList textEncoding = SDTextEncoder(SDTextTokenizer(prompt));
         NDList uncondEncoding = SDTextEncoder(SDTextTokenizer(negative_prompt));
 //        System.out.println(Arrays.toString(textEncoding.get(1).toFloatArray()));

@@ -209,10 +209,5 @@
       <artifactId>json</artifactId>
       <version>20220320</version>
     </dependency>
-    <!--dependency>
-      <groupId>com.github.haifengl</groupId>
-      <artifactId>smile-base</artifactId>
-      <version>3.0.2</version>
-    </dependency-->
   </dependencies>
 </project>

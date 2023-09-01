@@ -246,7 +246,7 @@ public class GaussianMixtureModel {
         //System.out.println("X_train: " + X_train.get("0:10,:"));
 
         double tolerance = 1e-8;
-        GaussianMixtureModel gmm = new GaussianMixtureModel(n_classes, 2000, tolerance);
+        GaussianMixtureModel gmm = new GaussianMixtureModel(n_classes, 100, tolerance);
         NDArray y_pred = gmm.predict(X_train);
 
         int correct = (int) y_pred.eq(y_train.flatten()).sum().toLongArray()[0];
